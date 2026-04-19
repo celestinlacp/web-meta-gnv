@@ -150,10 +150,15 @@ ul { list-style: none; }
   min-height: 90vh; display: flex; align-items: center;
   background: var(--dark); position: relative; overflow: hidden;
   padding: 120px 24px 80px;
+  background-size: cover; background-position: center; background-repeat: no-repeat;
 }
 .hero::before {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(135deg, var(--dark) 0%, #2A2200 50%, var(--dark) 100%);
+  background: linear-gradient(135deg,
+    rgba(10,8,0,0.88) 0%,
+    rgba(20,16,0,0.75) 40%,
+    rgba(10,8,0,0.60) 100%);
+  z-index: 0;
 }
 .hero-bg-shapes { position: absolute; inset: 0; pointer-events: none; }
 .hero-wave {
@@ -161,7 +166,11 @@ ul { list-style: none; }
   background: var(--white); clip-path: ellipse(60% 100% at 50% 100%);
 }
 
-/* Animated background dots */
+/* Hero content sits above overlay */
+.hero-content, .hero-bg-shapes, .hero-scroll-indicator { position: relative; z-index: 1; }
+
+/* Green "más verde" */
+.hero-title em.verde { color: #22c55e; }
 .hero::after {
   content: '';
   position: absolute; inset: 0;
@@ -650,6 +659,62 @@ ul { list-style: none; }
 .animate-in.visible { opacity: 1; transform: translateY(0); }
 
 /* ============================================================
+   ESTACIÓN ÚNICA
+   ============================================================ */
+.estacion-unica {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  border-radius: var(--radius); overflow: hidden;
+  box-shadow: var(--shadow-strong);
+}
+.est-unica-foto {
+  position: relative; min-height: 480px; overflow: hidden;
+}
+.est-unica-foto img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.estacion-unica:hover .est-unica-foto img { transform: scale(1.04); }
+.est-unica-overlay {
+  position: absolute; bottom: 20px; left: 20px;
+}
+.est-badge-grande {
+  background: var(--yellow); color: var(--black);
+  font-weight: 800; font-size: 0.9rem; padding: 8px 18px;
+  border-radius: 50px; display: inline-flex; align-items: center; gap: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+.est-unica-info {
+  background: var(--white); padding: 48px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.est-unica-info h3 {
+  font-size: 1.8rem; font-weight: 900; margin: 12px 0 4px; line-height: 1.2;
+}
+.est-subtitulo {
+  color: var(--yellow-dark); font-weight: 700;
+  font-size: 1rem; margin-bottom: 28px;
+}
+.est-datos { display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; }
+.est-dato { display: flex; align-items: flex-start; gap: 14px; }
+.est-dato i {
+  color: var(--yellow); font-size: 1.1rem;
+  margin-top: 2px; flex-shrink: 0; width: 20px; text-align: center;
+}
+.est-dato strong { display: block; font-size: 0.78rem; font-weight: 700; color: var(--gray); text-transform: uppercase; letter-spacing: 0.5px; }
+.est-dato span { font-size: 0.95rem; color: var(--dark); }
+.est-servicios-unica { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 8px; }
+.est-servicios-unica span {
+  background: var(--yellow-light); padding: 8px 14px;
+  border-radius: 50px; font-size: 0.82rem; font-weight: 600;
+  display: flex; align-items: center; gap: 6px;
+}
+.est-servicios-unica span i { color: var(--black); }
+/* Hide slider controls — single station */
+.estaciones .slider-controls { display: none; }
+/* Nosotros stats — 2 items = 2 columns */
+.nosotros-stats { grid-template-columns: repeat(2, 1fr) !important; }
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 1100px) {
@@ -671,6 +736,10 @@ ul { list-style: none; }
   .test-grid { grid-template-columns: repeat(2, 1fr); }
   .contacto-grid { grid-template-columns: 1fr; gap: 40px; }
   .estaciones-slider { grid-template-columns: repeat(2, 1fr); }
+  .estacion-unica { grid-template-columns: 1fr; }
+  .est-unica-foto { min-height: 280px; }
+  .est-unica-info { padding: 32px 24px; }
+  .est-unica-info h3 { font-size: 1.4rem; }
 }
 
 @media (max-width: 700px) {

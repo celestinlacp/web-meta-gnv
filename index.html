@@ -58,7 +58,7 @@
   <!-- ============================= -->
   <!-- ========== HERO ============= -->
   <!-- ============================= -->
-  <section class="hero" id="inicio">
+  <section class="hero" id="inicio" style="background-image: url('assets/img/fotos/estacion-queretaro.jpg');">
     <div class="hero-bg-shapes">
       <div class="hero-wave"></div>
     </div>
@@ -66,7 +66,7 @@
       <div class="hero-text">
         <p class="hero-eyebrow" id="hero-eyebrow">Gas Natural Vehicular</p>
         <h1 class="hero-title" id="hero-title">
-          Un mundo<br /><em>más verde</em>
+          Un mundo<br /><em class="verde">más verde</em>
         </h1>
         <p class="hero-subtitle" id="hero-subtitle">
           Ahorra hasta <strong>50%</strong> en combustible, reduce hasta <strong>80%</strong> las emisiones contaminantes y maneja con conciencia. Tu meta es un mundo mejor.
@@ -92,11 +92,11 @@
           </div>
         </div>
         <div class="hero-card" id="hero-card">
-          <div class="hero-card-icon"><i class="fa-solid fa-gauge-high"></i></div>
+          <div class="hero-card-icon"><i class="fa-solid fa-leaf" style="color:#22c55e"></i></div>
           <div class="hero-card-info">
-            <span class="hero-card-label">Ahorro mensual estimado</span>
-            <span class="hero-card-value" id="hero-savings-count">$2,400</span>
-            <span class="hero-card-sub">vs gasolina regular</span>
+            <span class="hero-card-label">Con Gas Natural Vehicular</span>
+            <span class="hero-card-value" id="hero-savings-count" style="font-size:3.2rem; color:#22c55e">50%</span>
+            <span class="hero-card-sub" style="font-weight:800; font-size:1rem; color:#111">de ahorro en combustible</span>
           </div>
         </div>
       </div>
@@ -175,17 +175,13 @@
             <img src="assets/img/logos/logo-amarillo.png" alt="Meta GNV" />
           </div>
           <div class="nosotros-stats">
-            <div class="stat-item" id="stat-years">
-              <span class="stat-num" data-target="10">0</span>
-              <span class="stat-label">Años de experiencia</span>
-            </div>
             <div class="stat-item" id="stat-clients">
               <span class="stat-num" data-target="5000">0</span>
               <span class="stat-label">Clientes satisfechos</span>
             </div>
             <div class="stat-item" id="stat-stations">
-              <span class="stat-num" data-target="12">0</span>
-              <span class="stat-label">Estaciones de servicio</span>
+              <span class="stat-num" data-target="1">0</span>
+              <span class="stat-label">Estación de servicio</span>
             </div>
           </div>
         </div>
@@ -277,78 +273,50 @@
         <h2 class="section-title">Estaciones<br /><span class="highlight">META GNV</span></h2>
         <p class="section-desc">Encuentra la estación más cercana a ti. Todas operan con los más altos estándares de calidad y servicio.</p>
       </div>
-      <div class="estaciones-slider" id="estaciones-slider">
-        <div class="est-card" id="est-card-1">
-          <div class="est-card-img">
-            <div class="est-placeholder"><i class="fa-solid fa-gas-pump"></i></div>
-          </div>
-          <div class="est-card-body">
-            <span class="est-badge">Abierta 24h</span>
-            <h3>Estación Meta Norte</h3>
-            <p><i class="fa-solid fa-location-dot"></i> Blvd. Norte #100, Col. Centro</p>
-            <p><i class="fa-solid fa-clock"></i> Lunes a Domingo · 24 horas</p>
-            <p><i class="fa-solid fa-phone"></i> (442) 111-2222</p>
-            <div class="est-servicios">
-              <span><i class="fa-solid fa-wind"></i> Aire</span>
-              <span><i class="fa-solid fa-droplet"></i> Agua</span>
-              <span><i class="fa-solid fa-couch"></i> Zona descanso</span>
-            </div>
-            <a href="https://maps.google.com" target="_blank" class="btn-est" id="btn-est-1">Ver en mapa <i class="fa-solid fa-arrow-right"></i></a>
+      <div class="estacion-unica" id="estaciones-slider">
+        <div class="est-unica-foto">
+          <img src="assets/img/fotos/estacion-queretaro.jpg" alt="Estación Meta GNV — Terminal de Autobuses Querétaro" />
+          <div class="est-unica-overlay">
+            <span class="est-badge-grande"><i class="fa-solid fa-circle-check"></i> Abierta 24 horas</span>
           </div>
         </div>
-        <div class="est-card" id="est-card-2">
-          <div class="est-card-img">
-            <div class="est-placeholder"><i class="fa-solid fa-gas-pump"></i></div>
-          </div>
-          <div class="est-card-body">
-            <span class="est-badge">Abierta 24h</span>
-            <h3>Estación Meta Sur</h3>
-            <p><i class="fa-solid fa-location-dot"></i> Av. Sur #250, Col. Industrial</p>
-            <p><i class="fa-solid fa-clock"></i> Lunes a Domingo · 24 horas</p>
-            <p><i class="fa-solid fa-phone"></i> (442) 333-4444</p>
-            <div class="est-servicios">
-              <span><i class="fa-solid fa-wind"></i> Aire</span>
-              <span><i class="fa-solid fa-droplet"></i> Agua</span>
-              <span><i class="fa-solid fa-car-side"></i> Aspirado</span>
+        <div class="est-unica-info">
+          <span class="est-badge">Nuestra estación</span>
+          <h3>Meta GNV — Terminal de Autobuses</h3>
+          <p class="est-subtitulo">Querétaro, México</p>
+          <div class="est-datos">
+            <div class="est-dato">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <strong>Dirección</strong>
+                <span>Terminal de Autobuses de Querétaro, Querétaro, Qro.</span>
+              </div>
             </div>
-            <a href="https://maps.google.com" target="_blank" class="btn-est" id="btn-est-2">Ver en mapa <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </div>
-        <div class="est-card" id="est-card-3">
-          <div class="est-card-img">
-            <div class="est-placeholder"><i class="fa-solid fa-gas-pump"></i></div>
-          </div>
-          <div class="est-card-body">
-            <span class="est-badge">Abierta 24h</span>
-            <h3>Estación Meta Oriente</h3>
-            <p><i class="fa-solid fa-location-dot"></i> Carr. Oriente Km. 5, Col. Nueva</p>
-            <p><i class="fa-solid fa-clock"></i> Lunes a Domingo · 24 horas</p>
-            <p><i class="fa-solid fa-phone"></i> (442) 555-6666</p>
-            <div class="est-servicios">
-              <span><i class="fa-solid fa-wind"></i> Aire</span>
-              <span><i class="fa-solid fa-toilet"></i> Baños</span>
-              <span><i class="fa-solid fa-couch"></i> Zona descanso</span>
+            <div class="est-dato">
+              <i class="fa-solid fa-clock"></i>
+              <div>
+                <strong>Horario</strong>
+                <span>Lunes a Domingo · 24 horas</span>
+              </div>
             </div>
-            <a href="https://maps.google.com" target="_blank" class="btn-est" id="btn-est-3">Ver en mapa <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </div>
-        <div class="est-card" id="est-card-4">
-          <div class="est-card-img">
-            <div class="est-placeholder"><i class="fa-solid fa-gas-pump"></i></div>
-          </div>
-          <div class="est-card-body">
-            <span class="est-badge">Abierta 24h</span>
-            <h3>Estación Meta Poniente</h3>
-            <p><i class="fa-solid fa-location-dot"></i> Av. Poniente #890, Fracc. Las Fuentes</p>
-            <p><i class="fa-solid fa-clock"></i> Lunes a Domingo · 24 horas</p>
-            <p><i class="fa-solid fa-phone"></i> (442) 777-8888</p>
-            <div class="est-servicios">
-              <span><i class="fa-solid fa-wind"></i> Aire</span>
-              <span><i class="fa-solid fa-droplet"></i> Agua</span>
-              <span><i class="fa-solid fa-car-side"></i> Aspirado</span>
+            <div class="est-dato">
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <strong>Teléfono</strong>
+                <span>(442) 000-0000</span>
+              </div>
             </div>
-            <a href="https://maps.google.com" target="_blank" class="btn-est" id="btn-est-4">Ver en mapa <i class="fa-solid fa-arrow-right"></i></a>
           </div>
+          <div class="est-servicios est-servicios-unica">
+            <span><i class="fa-solid fa-wind"></i> Aire</span>
+            <span><i class="fa-solid fa-droplet"></i> Agua</span>
+            <span><i class="fa-solid fa-couch"></i> Zona descanso</span>
+            <span><i class="fa-solid fa-toilet"></i> Baños limpios</span>
+            <span><i class="fa-solid fa-car-side"></i> Aspirado</span>
+          </div>
+          <a href="https://maps.app.goo.gl/zU91g3VW7rHUoVFL7" target="_blank" class="btn btn-primary" id="btn-est-1" style="margin-top:24px; display:inline-flex;">
+            <i class="fa-solid fa-map-location-dot"></i> Ver en Google Maps
+          </a>
         </div>
       </div>
       <div class="slider-controls">
