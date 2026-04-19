@@ -1,0 +1,28 @@
+# macOS system files
+.DS_Store
+**/.DS_Store
+__MACOSX/
+**/__MACOSX/
+._*
+
+# PDFs y archivos de diseño pesados (opcionales en repo)
+Manual de Imagen/DISEÑOS PDF/
+Manual de Imagen/DISEÑOS apertura lonas PDF/
+Manual de Imagen/FOTOS feb/*.HEIC
+Manual de Imagen/FOTOS feb/*.MOV
+Manual de Imagen/02_Logotipo/Para registro/
+Manual de Imagen/02_Logotipo/Uso web/Jpeg (uso web)/
+Manual de Imagen/02_Logotipo/Impresión/
+
+# Adobe Illustrator
+*.ai
+
+# TIFF
+*.tif
+*.tiff
+
+# node_modules (por si acaso)
+node_modules/
+
+# Environment
+.env
