@@ -662,33 +662,40 @@ ul { list-style: none; }
    ESTACIÓN ÚNICA
    ============================================================ */
 .estacion-unica {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  display: grid; grid-template-columns: 58% 42%; gap: 0;
   border-radius: var(--radius); overflow: hidden;
   box-shadow: var(--shadow-strong);
+  min-height: 560px;
+  width: 100%;
 }
 .est-unica-foto {
-  position: relative; min-height: 480px; overflow: hidden;
+  position: relative; overflow: hidden;
+  min-height: 540px;
 }
 .est-unica-foto img {
-  width: 100%; height: 100%; object-fit: cover;
-  transition: transform 0.6s ease;
+  width: 100%; height: 100%; object-fit: cover; object-position: center;
+  transition: transform 0.7s ease;
+  display: block;
 }
-.estacion-unica:hover .est-unica-foto img { transform: scale(1.04); }
+.estacion-unica:hover .est-unica-foto img { transform: scale(1.05); }
 .est-unica-overlay {
-  position: absolute; bottom: 20px; left: 20px;
+  position: absolute; bottom: 24px; left: 24px;
+  background: linear-gradient(135deg, rgba(0,0,0,0.4), transparent);
+  border-radius: var(--radius-sm); padding: 4px;
 }
 .est-badge-grande {
   background: var(--yellow); color: var(--black);
-  font-weight: 800; font-size: 0.9rem; padding: 8px 18px;
+  font-weight: 800; font-size: 0.9rem; padding: 10px 20px;
   border-radius: 50px; display: inline-flex; align-items: center; gap: 8px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
 }
 .est-unica-info {
-  background: var(--white); padding: 48px;
+  background: var(--white); padding: 48px 40px;
   display: flex; flex-direction: column; justify-content: center;
+  overflow: hidden; box-sizing: border-box;
 }
 .est-unica-info h3 {
-  font-size: 1.8rem; font-weight: 900; margin: 12px 0 4px; line-height: 1.2;
+  font-size: 1.7rem; font-weight: 900; margin: 12px 0 4px; line-height: 1.2;
 }
 .est-subtitulo {
   color: var(--yellow-dark); font-weight: 700;
@@ -702,13 +709,21 @@ ul { list-style: none; }
 }
 .est-dato strong { display: block; font-size: 0.78rem; font-weight: 700; color: var(--gray); text-transform: uppercase; letter-spacing: 0.5px; }
 .est-dato span { font-size: 0.95rem; color: var(--dark); }
-.est-servicios-unica { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 8px; }
+.est-servicios-unica { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; }
 .est-servicios-unica span {
   background: var(--yellow-light); padding: 8px 14px;
   border-radius: 50px; font-size: 0.82rem; font-weight: 600;
   display: flex; align-items: center; gap: 6px;
 }
 .est-servicios-unica span i { color: var(--black); }
+/* Google Maps button contained inside info panel */
+#btn-est-1 {
+  align-self: flex-start;
+  margin-top: 8px !important;
+  white-space: nowrap;
+  max-width: 100%;
+  box-sizing: border-box;
+}
 /* Hide slider controls — single station */
 .estaciones .slider-controls { display: none; }
 /* Nosotros stats — 2 items = 2 columns */
@@ -736,10 +751,11 @@ ul { list-style: none; }
   .test-grid { grid-template-columns: repeat(2, 1fr); }
   .contacto-grid { grid-template-columns: 1fr; gap: 40px; }
   .estaciones-slider { grid-template-columns: repeat(2, 1fr); }
-  .estacion-unica { grid-template-columns: 1fr; }
-  .est-unica-foto { min-height: 280px; }
+  .estacion-unica { grid-template-columns: 1fr; min-height: auto; }
+  .est-unica-foto { min-height: 320px; }
   .est-unica-info { padding: 32px 24px; }
   .est-unica-info h3 { font-size: 1.4rem; }
+  #btn-est-1 { width: 100% !important; justify-content: center; }
 }
 
 @media (max-width: 700px) {
