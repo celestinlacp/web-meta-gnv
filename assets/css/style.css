@@ -752,10 +752,13 @@ ul { list-style: none; }
 }
 
 @media (max-width: 900px) {
-  .hero-content { grid-template-columns: 1fr; gap: 40px; }
-  .hero-visual { width: 100%; }
+  .hero-content { grid-template-columns: 1fr; gap: 32px; text-align: center; }
+  .hero-text { display: flex; flex-direction: column; align-items: center; }
+  .hero-subtitle { text-align: center; }
+  .hero-actions { justify-content: center; }
+  .hero-visual { width: 100%; align-items: center; }
   .hero-badge-wrap { justify-content: center; }
-  .hero-card { max-width: 400px; margin: 0 auto; }
+  .hero-card { width: 100%; max-width: 420px; margin: 0 auto; }
   .hero { padding-bottom: 120px; }
   .beneficios-grid { grid-template-columns: repeat(2, 1fr); }
   .nosotros-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -771,6 +774,7 @@ ul { list-style: none; }
   .est-unica-info { padding: 32px 24px; }
   .est-unica-info h3 { font-size: 1.4rem; }
   #btn-est-1 { width: 100% !important; justify-content: center; }
+  .hero-right-photo { display: none; }
 }
 
 @media (max-width: 700px) {
@@ -788,12 +792,18 @@ ul { list-style: none; }
   .pagos-grid { grid-template-columns: 1fr; }
   .test-grid { grid-template-columns: 1fr; }
   .estaciones-slider { grid-template-columns: 1fr; }
-  .nosotros-stats { grid-template-columns: repeat(3, 1fr); }
+  .nosotros-stats { grid-template-columns: repeat(2, 1fr); }
   .footer-top-inner { grid-template-columns: 1fr; gap: 32px; }
   .footer-bottom-inner { flex-direction: column; text-align: center; }
   .promos-grid { grid-template-columns: 1fr; }
-  .section { padding: 64px 0; }
-  .hero { min-height: auto; padding-top: 80px; }
+  .section { padding: 56px 0; }
+  .hero { min-height: auto; padding: 90px 16px 100px; }
   .hero-scroll-indicator { display: none; }
   .hero-right-photo { display: none; }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions .btn { text-align: center; justify-content: center; }
+  .hero-badge-wrap { flex-wrap: wrap; gap: 8px; }
+  .contacto-form input, .contacto-form select, .contacto-form textarea { font-size: 16px; min-height: 48px; }
+  .est-servicios span { font-size: 0.8rem; }
+  .section-title { font-size: clamp(1.6rem, 6vw, 2.4rem); }
 }

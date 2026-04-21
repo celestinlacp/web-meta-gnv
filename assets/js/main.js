@@ -291,23 +291,35 @@ function submitForm(e) {
   btn.textContent = 'Enviando...';
   btn.disabled = true;
 
-  // Simulate submission
-  setTimeout(() => {
-    document.getElementById('contacto-form').style.display = 'none';
-    const success = document.getElementById('form-success');
-    success.style.display = 'flex';
-    success.style.flexDirection = 'column';
-    success.style.alignItems = 'center';
-    success.style.gap = '8px';
-    // Reset after 5s
-    setTimeout(() => {
-      document.getElementById('contacto-form').style.display = 'block';
-      success.style.display = 'none';
+  const data = new FormData();
+  data.append('Nombre',    document.getElementById('form-nombre').value);
+  data.append('Teléfono',  document.getElementById('form-telefono').value);
+  data.append('Email',     document.getElementById('form-email').value);
+  data.append('Vehículo',  document.getElementById('form-vehiculo').value);
+  data.append('Mensaje',   document.getElementById('form-mensaje').value);
+  data.append('_subject',  'Nueva solicitud de cotización — Meta GNV');
+  data.append('_cc',       'luribe@natenergy.mx');
+  data.append('_captcha',  'false');
+
+  fetch('https://formsubmit.co/ajax/adm@natenergy.mx', { method: 'POST', body: data })
+    .then(res => res.json())
+    .then(() => {
+      document.getElementById('contacto-form').style.display = 'none';
+      const success = document.getElementById('form-success');
+      success.style.cssText = 'display:flex; flex-direction:column; align-items:center; gap:8px;';
+      setTimeout(() => {
+        document.getElementById('contacto-form').style.display = 'block';
+        success.style.display = 'none';
+        btn.textContent = 'ENVIAR SOLICITUD';
+        btn.disabled = false;
+        e.target.reset();
+      }, 5000);
+    })
+    .catch(() => {
       btn.textContent = 'ENVIAR SOLICITUD';
       btn.disabled = false;
-      e.target.reset();
-    }, 5000);
-  }, 1500);
+      alert('Hubo un error al enviar. Por favor escríbenos directamente a adm@natenergy.mx');
+    });
 }
 
 /* ---- Terms Tabs ---- */
