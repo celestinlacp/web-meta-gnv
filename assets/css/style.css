@@ -662,20 +662,21 @@ ul { list-style: none; }
    ESTACIÓN ÚNICA
    ============================================================ */
 .estacion-unica {
-  display: grid; grid-template-columns: 55% 45%; gap: 0;
+  display: grid; grid-template-columns: 42% 30% 28%; gap: 0;
   overflow: hidden;
-  min-height: 560px;
+  min-height: 580px;
   width: 100%;
 }
 .est-unica-foto {
   position: relative; overflow: hidden;
-  min-height: 560px;
+  min-height: 580px;
 }
 .est-unica-foto img {
   width: 100%; height: 100%; object-fit: cover; object-position: center top;
   transition: transform 0.7s ease;
   display: block;
 }
+.est-unica-foto-right img { object-position: center center; }
 .estacion-unica:hover .est-unica-foto img { transform: scale(1.05); }
 .est-unica-overlay {
   position: absolute; bottom: 24px; left: 24px;
@@ -752,6 +753,7 @@ ul { list-style: none; }
   .estaciones-slider { grid-template-columns: repeat(2, 1fr); }
   .estacion-unica { grid-template-columns: 1fr; min-height: auto; }
   .est-unica-foto { min-height: 320px; }
+  .est-unica-foto-right { display: none; }
   .est-unica-info { padding: 32px 24px; }
   .est-unica-info h3 { font-size: 1.4rem; }
   #btn-est-1 { width: 100% !important; justify-content: center; }
