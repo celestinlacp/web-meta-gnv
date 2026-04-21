@@ -139,15 +139,15 @@ function animateSavings() {
   const el = document.getElementById('hero-savings-count');
   if (!el) return;
   let start = 0;
-  const target = 2400;
+  const target = 50;
   const timer = setInterval(() => {
-    start += 80;
+    start += 2;
     if (start >= target) {
       start = target;
       clearInterval(timer);
     }
-    el.textContent = '$' + start.toLocaleString('es-MX');
-  }, 30);
+    el.textContent = start + '%';
+  }, 40);
 }
 window.addEventListener('load', () => setTimeout(animateSavings, 600));
 
